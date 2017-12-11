@@ -131,7 +131,7 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
 
-The four well-predicted test images had high probabilities each time. The top five probabilities of the problematic fourth image (children crossing) show that the network is a bit more uncertain about its prediction, although still quite certain about its wrong guess. The correct label is only the third most probable option for the "children crossing" test image.
+The four well-predicted test images had high probabilities each time. The top five probabilities of the problematic fourth image (children crossing) show that the network is a bit more uncertain about its prediction, although still quite certain about its wrong guess. The correct label is only the second most probable option for the "children crossing" test image.
 
 | Top probability |          Prediction          |
 | :-------------: | :--------------------------: |
