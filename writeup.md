@@ -1,42 +1,8 @@
 # **Traffic Sign Recognition** 
 
-## Writeup
+#### 1. Project files
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
-
-[//]: # "Image References"
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
----
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+A guide through the source code can be found [here](https://github.com/benenaes/CarND-Traffic_Sign_Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -50,15 +16,15 @@ The traffic sign labels from the CSV file were parsed by the Python *CSV* librar
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-#### 2. Include an exploratory visualization of the dataset.
+#### 2. An exploratory visualization of the dataset.
 
 Here is an overview of all the traffic sign classes from the database:
 
-![all_traffic_signs](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\all_traffic_signs.jpg)
+![all_traffic_signs](./figures/all_traffic_signs.jpg)
 
 A histogram with the number of training figures per traffic sign class is given here:
 
-![training_histogram](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\training_histogram.jpg)  
+![training_histogram](./figures/training_histogram.jpg)  
 
 
 
@@ -74,11 +40,11 @@ As the histogram of the training dataset shows, each traffic sign class isn't eq
 
 An example of such transformations of an existing 70 km/h speed limit sign is shown here:
 
-![perspective_transformations](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\perspective_transformations.jpg)
+![perspective_transformations](./figures/perspective_transformations.jpg)
 
 A new histogram with the added training data was generated and resulted in the following:
 
-![extended_training_histogram](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\extended_training_histogram.jpg)
+![extended_training_histogram](./figures/extended_training_histogram.jpg)
 
 The number of additional random perspective transformations were topped, because the network might start to perceive the background/periphery of these traffic signs as part of the features that define the traffic sign class. The bounding boxes in the pickled data could possibly be used to get rid of as much background as possible before applying the perspective transformation.
 
@@ -142,9 +108,9 @@ Iterative approach:
 
 Here are five German traffic signs that I found on the web:
 
-| ![Baustelle](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\Baustelle.jpg) | ![DoNotEnter](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\DoNotEnter.jpg) | ![Dreizig](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\Dreizig.jpg) | ![Kindern](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\Kindern.jpg) | ![Roundabout](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\Roundabout.jpg) |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Road work                                | No entry                                 | Speed limit (30 km/h)                    | Children crossing                        | Roundabout mandatory                     |
+| ![Baustelle](./Baustelle.jpg) | ![DoNotEnter](./DoNotEnter.jpg) | ![Dreizig](./Dreizig.jpg) | ![Kindern](./Kindern.jpg) | ![Roundabout](./Roundabout.jpg) |
+| ----------------------------- | ------------------------------- | ------------------------- | ------------------------- | ------------------------------- |
+| Road work                     | No entry                        | Speed limit (30 km/h)     | Children crossing         | Roundabout mandatory            |
 
 The first two traffic signs are a bit dirtier, so it might be interesting to see how the network copes with that. The third has a strange vertical texture pattern on the traffic sign itself. The fourth and fifth have different perspectives.
 
@@ -177,15 +143,15 @@ The four well-predicted test images had high probabilities each time. The top fi
 
 The bar charts for the five top probabilities for each new test image is added here (visualized with *matplotlib.barh()*):
 
-![barchart1](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\barchart1.jpg)
+![barchart1](./figures/barchart1.jpg)
 
-![barchart2](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\barchart2.jpg)
+![barchart2](./figures/barchart2.jpg)
 
-![barchart3](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\barchart3.jpg)
+![barchart3](./figures/barchart3.jpg)
 
-![barchart4](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\barchart4.jpg)
+![barchart4](./figures/barchart4.jpg)
 
-![barchart5](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\barchart5.jpg)
+![barchart5](./figures/barchart5.jpg)
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
@@ -194,6 +160,6 @@ I only did a brief investigation on the output of the first convolution layer (r
 
 It is nice to see that in some cases the border is highlighted, in other cases the arrows.
 
-![outputFeatureMap](D:\Projects\SDC\CarND-Traffic-Sign-Classifier-Project\figures\outputFeatureMap.jpg)
+![outputFeatureMap](./figures/outputFeatureMap.jpg)
 
 
